@@ -11,6 +11,7 @@ using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http;
 
 namespace API.Controllers
 {
@@ -60,5 +61,8 @@ namespace API.Controllers
 
             return BadRequest("Failed to update user");
         }
+
+        [HttpPost("add-photo")]
+        public async Task<PhotoDto> AddPhoto(IFormFile file)
     }
 }
